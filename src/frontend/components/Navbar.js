@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
 import { Navbar, Nav, Button, Container } from "react-bootstrap";
 import market from "./market.png";
-import "./dashboard.css"
+import "./dashboard.css";
 
 const Navigation = ({ web3Handler, account }) => {
   return (
@@ -47,44 +47,25 @@ const Navigation = ({ web3Handler, account }) => {
               <path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"></path>
             </svg>
           </button>
-          <a href="http://localhost:3000/">
-            <button className="add-btn" title="Add New Project">
-              <svg
-                className="btn-icon"
-                xmlns="http://www.w3.org/2000/svg"
-                width="16"
-                height="16"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                stroke-width="3"
-                stroke-linecap="round"
-                stroke-linejoin="round"
-                className="feather feather-plus"
-              >
-                <line x1="12" y1="5" x2="12" y2="19" />
-                <line x1="5" y1="12" x2="19" y2="12" />
-              </svg>
-            </button>
-          </a>
+
           <Nav>
-              {account ? (
-                <Nav.Link
-                  href={`https://etherscan.io/address/${account}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="button nav-button btn-sm mx-4"
-                >
-                  <Button variant="dark">
-                    {account.slice(0, 5) + "..." + account.slice(38, 42)}
-                  </Button>
-                </Nav.Link>
-              ) : (
-                <Button variant = "dark" onClick={web3Handler}>
-                  Connect Wallet
+            {account ? (
+              <Nav.Link
+                href={`https://etherscan.io/address/${account}`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="button nav-button btn-sm mx-4"
+              >
+                <Button variant="dark">
+                  {account.slice(0, 5) + "..." + account.slice(38, 42)}
                 </Button>
-              )}
-            </Nav>
+              </Nav.Link>
+            ) : (
+              <Button variant="dark" onClick={web3Handler}>
+                Connect Wallet
+              </Button>
+            )}
+          </Nav>
         </div>
         <button className="messages-btn">
           <svg
