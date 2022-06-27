@@ -74,11 +74,11 @@ const Home = ({ marketplace, nft }) => {
               {items.map((item, idx) => (
                 <div class="project-box-wrapper">
                   <div class="project-box">
-                    <div class="project-box-header">
-                      <span>Cormac McCarthy</span>
-                    </div>
+                    {/* <div class="project-box-header">
+                      <span>{item.authorName}</span>
+                    </div> */}
                     <div class="project-box-content-header">
-                      <p class="box-content-header">The Road</p>
+                      <p class="box-content-header">{item.authorName}</p>
                     </div>
                     <div class="box-progress-wrapper">
                       <img src={item.image} className="bookimg" />
