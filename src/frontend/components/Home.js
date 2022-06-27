@@ -4,7 +4,7 @@ import { Button } from "react-bootstrap";
 import "./dashboard.css";
 import SideBar from "./SideBar";
 
-const Home = ({ marketplace, nft }) => {
+const Home = ({ marketplace, nft ,search}) => {
   const [loading, setLoading] = useState(true);
   const [items, setItems] = useState([]);
   const loadMarketplaceItems = async () => {
@@ -33,6 +33,9 @@ const Home = ({ marketplace, nft }) => {
         });
       }
     }
+
+    items = items.filter((item) =>item.name.toLowerCase().includes(search.toLowerCase()))
+
     setLoading(false);
     setItems(items);
   };
