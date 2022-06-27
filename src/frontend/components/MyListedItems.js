@@ -83,6 +83,7 @@ export default function MyListedItems({ marketplace, nft, account }) {
           price: i.price,
           itemId: i.itemId,
           name: metadata.name,
+          authorName: metadata.authorName,
           description: metadata.description,
           image: metadata.image,
         };
@@ -107,7 +108,7 @@ export default function MyListedItems({ marketplace, nft, account }) {
   return (
     <div>
       <div class="app-content">
-        <SideBar/>
+        <SideBar />
         <div class="projects-section">
           {listedItems.length > 0 ? (
             <>
@@ -120,11 +121,8 @@ export default function MyListedItems({ marketplace, nft, account }) {
                 {listedItems.map((item, idx) => (
                   <div class="project-box-wrapper">
                     <div class="project-box">
-                      <div class="project-box-header">
-                        <span>Cormac McCarthy</span>
-                      </div>
                       <div class="project-box-content-header">
-                        <p class="box-content-header">The Road</p>
+                        <p class="box-content-header">{item.authorName}</p>
                       </div>
                       <div class="box-progress-wrapper">
                         <img src={item.image} className="bookimg" />
